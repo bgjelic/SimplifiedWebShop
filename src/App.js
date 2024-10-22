@@ -1,25 +1,67 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+import MoviesList from './components/MoviesList';
+import Cart from './components/Cart';
+import CartButton from './components/CartButton';
 
-function App() {
+const App = () => {
+  const movies = [
+    { id: 1, title: 'Inception', price: 10 },
+    { id: 2, title: 'Interstellar', price: 12 },
+    { id: 3, title: 'The Dark Knight', price: 15 },
+    { id: 4, title: 'Titanic', price: 8 },
+    { id: 5, title: 'The Godfather', price: 14 },
+    { id: 6, title: 'Pulp Fiction', price: 11 },
+    { id: 7, title: 'Forrest Gump', price: 10 },
+    { id: 8, title: 'The Matrix', price: 12 },
+    { id: 9, title: 'Fight Club', price: 9 },
+    { id: 10, title: 'The Shawshank Redemption', price: 13 },
+    { id: 11, title: 'Gladiator', price: 11 },
+    { id: 12, title: 'The Social Network', price: 9 },
+    { id: 13, title: 'The Avengers', price: 12 },
+    { id: 14, title: 'Spider-Man: No Way Home', price: 16 },
+    { id: 15, title: 'Jurassic Park', price: 10 },
+    { id: 16, title: 'Frozen', price: 8 },
+    { id: 17, title: 'The Lion King', price: 9 },
+    { id: 18, title: 'Toy Story', price: 7 },
+    { id: 19, title: 'Black Panther', price: 13 },
+    { id: 20, title: 'The Silence of the Lambs', price: 12 },
+    { id: 21, title: 'Star Wars: A New Hope', price: 15 }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartProvider>
+      <Router>
+      <header class="header">
+        <div class="logo">Movie App</div>
+        <nav class="nav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div>
+          <CartButton />
+        </div>
+      </header>  
+        <Routes>
+          <Route path="/" element={<MoviesList movies={movies} />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+        <footer class="footer">
+          <div class="footer-content">
+            <p>&copy; 2024 My Movie App. All Rights Reserved. bgjelic@gmail.com</p>
+            <nav class="footer-nav">
+              <a href="#privacy">Privacy Policy</a>
+              <a href="#terms">Terms of Service</a>
+              <a href="#contact">Contact Us</a>
+            </nav>
+          </div>
+        </footer>
+      </Router>
+    </CartProvider>
   );
-}
+};
 
 export default App;

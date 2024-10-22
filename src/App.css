@@ -1,38 +1,262 @@
-.App {
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Distribute space between elements */
+  align-items: center; /* Center items vertically */
+  padding: 10px 20px; /* Add some padding */
+  background: #007bff; /* Header background color */
+  color: white; /* Text color for the header */
+}
+
+.logo {
+  font-size: 1.5em; /* Size of the logo text */
+}
+
+.nav {
+  display: flex; /* Flexbox for navigation links */
+  gap: 20px; /* Space between links */
+}
+
+.nav a {
+  color: white; /* Link text color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Transition for hover effect */
+}
+
+.nav a:hover {
+  color: #ffeb3b; /* Change color on hover */
+}
+
+.footer {
+  background: #343a40; /* Dark background color */
+  color: white; /* White text color */
+  padding: 20px; /* Padding to create space inside the footer */
+  text-align: center; /* Center text */
+}
+
+.footer-content {
+  max-width: 1200px; /* Limit width for larger screens */
+  margin: 0 auto; /* Center align the footer content */
+}
+
+.footer-nav {
+  margin-top: 10px; /* Space between paragraph and navigation */
+  display: flex; /* Use flexbox for navigation links */
+  justify-content: center; /* Center the links horizontally */
+  gap: 15px; /* Space between the links */
+}
+
+.footer-nav a {
+  color: #ffeb3b; /* Link color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Transition effect for link hover */
+}
+
+.footer-nav a:hover {
+  color: #ffffff; /* Change link color on hover */
+}
+
+
+.movies-list, .cart {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.movie-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.movie-item {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.2s, box-shadow 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.movie-item h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.movie-item button {
+  background: #007bff;
   color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-item button:hover {
+  background: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.cart {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px; /* Slightly larger border radius */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+}
+
+h2 {
+  margin-bottom: 20px; /* Add some spacing below the title */
+}
+
+.cart-items {
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex; /* Use flexbox for arrangement */
+  justify-content: space-between; /* Space out title/price and remove button */
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.3s;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item:hover {
+  background: #f0f0f0;
+}
+
+.remove-button {
+  background-color: #dc3545; /* Bootstrap danger color */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.cart-summary {
+  margin-top: 20px; /* Spacing above summary */
+  text-align: center; /* Center content */
+}
+
+.checkout-button, 
+.empty-cart-button {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px; /* Spacing between buttons */
+  transition: background-color 0.3s;
+}
+
+.checkout-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.empty-cart-button {
+  background-color: #dc3545; /* Red color for danger actions */
+}
+
+.empty-cart-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.back-link {
+  display: block; /* Make it take full width */
+  text-align: center; /* Center the text */
+  margin-top: 20px; /* Spacing above link */
+  color: #007bff; /* Bootstrap primary link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+}
+
+.back-link:hover {
+  text-decoration: underline; /* Underline on hover for clarity */
+}
+
+.cart-button {
+  position: fixed; /* Make the button fixed to the viewport */
+  bottom: 20px; /* Position it 20 pixels from the bottom */
+  right: 20px; /* Position it 20 pixels from the right */
+  background: linear-gradient(135deg, #6a5acd, #8a2be2); /* Gradient background */
+  color: white; /* White text color */
+  padding: 15px 25px; /* Increased padding for a larger button */
+  border-radius: 50px; /* Rounded button */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Bold text for better visibility */
+  display: flex; /* Use flexbox to align content */
+  align-items: center; /* Center content vertically */
+  gap: 8px; /* Space between icon and text */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+}
+
+.cart-button button {
+  background: transparent; /* Use transparent background */
+  color: inherit; /* Inherit text color */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin: 0; /* Remove default margin */
+}
+
+.cart-button:hover {
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+}
+
+.cart-button:hover button {
+  background-color: rgba(255, 255, 255, 0.1); /* Lighten the button on hover */
+}
+
+h2, h3 {
+  margin: 15px 0; /* Add spacing */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .movies-list, .cart {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .movie-item {
+    padding: 10px;
   }
+
+  .movie-items {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+.empty-state {
+  text-align: center;
+  font-size: 1.2em;
+  color: #999;
+  margin: 20px 0;
 }
