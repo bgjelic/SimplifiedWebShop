@@ -4,5 +4,5 @@ This is for educational purposes only.
 
 ## Short description
 
-Simple product website
-Focus on the shopping cart function
+- Simple product website
+- Focus on the shopping cart function
