@@ -1,8 +1,8 @@
 # Simplified web shop
 
-This is for educational purpuses only.
+This is for educational purposes only.
 
-## Short discription
+## Short description
 
 Simple product website
-Focus on shoping cart function
+Focus on the shopping cart function
