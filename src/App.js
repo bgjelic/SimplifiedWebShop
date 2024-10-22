@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import MoviesList from './components/MoviesList';
 import Cart from './components/Cart';
 import CartButton from './components/CartButton';
+import { Link } from 'react-router-dom'; 
 
 const App = () => {
   const movies = [
@@ -37,25 +38,27 @@ const App = () => {
       <header class="header">
         <div class="logo">Movie App</div>
         <nav class="nav">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <Link to="/home">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </nav>
         <div>
           <CartButton />
         </div>
       </header>  
         <Routes>
-          <Route path="/SimplifiedWebShop/" element={<MoviesList movies={movies} />} />
-          <Route path="SimplifiedWebShop/cart" element={<Cart />} />
+          <Route path="/" element={<MoviesList movies={movies} />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/about" element={<Cart />} />
+          <Route path="/contact" element={<Cart />} />
         </Routes>
         <footer class="footer">
           <div class="footer-content">
             <p>&copy; 2024 My Movie App. All Rights Reserved. bgjelic@gmail.com</p>
             <nav class="footer-nav">
-              <a href="#privacy">Privacy Policy</a>
-              <a href="#terms">Terms of Service</a>
-              <a href="#contact">Contact Us</a>
+              <Link to="/privacy">Privacy Policy</Link>
+              <Link to="/terms">Terms of Service</Link>
+              <Link to="/contact">Contact Us</Link>
             </nav>
           </div>
         </footer>
