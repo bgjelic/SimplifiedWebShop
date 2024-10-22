@@ -46,8 +46,8 @@ const App = () => {
         </div>
       </header>  
         <Routes>
-          <Route path="/" element={<MoviesList movies={movies} />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/SimplifiedWebShop/" element={<MoviesList movies={movies} />} />
+          <Route path="SimplifiedWebShop/cart" element={<Cart />} />
         </Routes>
         <footer class="footer">
           <div class="footer-content">
