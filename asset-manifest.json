@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SimplifiedWebShop/static/css/main.0bc009a8.css",
+    "main.js": "/SimplifiedWebShop/static/js/main.dae002e8.js",
+    "static/js/453.234e229d.chunk.js": "/SimplifiedWebShop/static/js/453.234e229d.chunk.js",
+    "index.html": "/SimplifiedWebShop/index.html",
+    "main.0bc009a8.css.map": "/SimplifiedWebShop/static/css/main.0bc009a8.css.map",
+    "main.dae002e8.js.map": "/SimplifiedWebShop/static/js/main.dae002e8.js.map",
+    "453.234e229d.chunk.js.map": "/SimplifiedWebShop/static/js/453.234e229d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0bc009a8.css",
+    "static/js/main.dae002e8.js"
+  ]
+}
